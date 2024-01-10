@@ -1,5 +1,4 @@
-FROM ubuntu
+FROM alpine:latest
 
 # Instalação do Node.js
-RUN apt-get update && \
-    apt-get install -y nodejs npm python3
+RUN apk add --update --no-cache python3 nodejs npm && ln -sf python3 /usr/bin/python
