@@ -1,6 +1,3 @@
-FROM python:3.11-slim
+FROM node:20.11.0-alpine3.19
 
-# Instalação do Node.js e, opcionalmente, do npm
-RUN apt-get update && \
-    apt-get install -y nodejs && \
-    command -v npm >/dev/null 2>&1 || { apt-get install -y npm; }
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
